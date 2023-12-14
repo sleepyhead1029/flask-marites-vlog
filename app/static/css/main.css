@@ -1,0 +1,245 @@
+body {
+  background-color:hsla(18,24%,92%,1);
+  background-image:
+  radial-gradient(at 0% 100%, hsla(222,25%,79%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 0%, hsla(19,24%,92%,1) 0px, transparent 50%),
+  radial-gradient(at 100% 0%, hsla(222,25%,79%,1) 0px, transparent 50%),
+  radial-gradient(at 98% 97%, hsla(18,24%,92%,1) 0px, transparent 50%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  color: #333333;
+  margin-top: 5rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.brand-name {
+  color: #555555 !important;
+  font-weight: bold;
+  font-family: 'Anton', sans-serif;
+}
+
+.brand-name:hover {
+  color: #888888 !important;
+}
+
+.link-font {
+  color: #3D80E4 !important;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(-55deg, #0F7478, #8bdfe3, #7AC6AB, #D3F6BB);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333333;
+}
+
+h7 {
+  color: #333333;
+  font-size: 16px;
+}
+
+.bg-steel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 15px #00000013;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #555555;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #888888;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  border-radius: 1rem;
+}
+
+.content-section:hover {
+  box-shadow: 0px 0px 16px 0px rgba(117, 117, 117, 0.5);
+}
+
+.post-section {
+  background: #ffffff;
+  padding: 20px 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  border-radius: 1.5rem;;
+}
+
+.sidebar-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px 20px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 15px #00000013;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.login-section {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 35px 20px;
+  border-radius: 3px;
+  margin-top: 15;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  margin-right: 150px;
+  border-radius: 0.375rem;;
+  box-shadow: 0px 0px 15px #00000013;
+}
+
+.account-section {
+  width: auto;
+  height: auto;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  padding: 35px 20px;
+  border-radius: 3px;
+  margin-top: 15;
+  margin-bottom: 20px;
+}
+
+.account-username {
+  color: #333333;
+  font-size: 20px !important;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.account-info {
+  color: #333333;
+  font-size: 22px !important;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.author-font{
+  color: #333333 !important;
+  font-weight: bold;
+}
+
+.author-font:hover {
+  color: #888888 !important;
+}
+
+.article-title {
+  color: #333333 !important;
+  font-size: 16px;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 100px;
+  width: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+
+.my-btn {
+  color: #333333;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 0.375rem;;
+  box-shadow: 0px 0px 15px #B3B6BF;
+  padding: 5px 320px;
+}
+
+.my-btn:hover {
+  color: #ffffff;
+  background-color: #333333;
+}
+
+.list-group {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-group-bg {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.list-item {
+  padding: 10px 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.list-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: .5rem;
+}
+
+.content-bg {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px 20px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 15px #00000013;
+  font-size: 16px;
+}
+
+.about-page {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px 20px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 15px #00000013;
+  font-size: 16px;
+}
+

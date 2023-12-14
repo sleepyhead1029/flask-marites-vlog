@@ -1,0 +1,27 @@
+{% extends "layout.html" %} {% block content %} {% for post in posts %} {%if not
+post.is_banned%}
+<article class="media content-section" id="post-section-{{ post.id }}">
+  <img
+    class="rounded-circle article-img"
+    src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}"
+  />
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="author-font mr-2" href="#">{{ post.author.username }}</a>
+      <small class="date-font text-muted"
+        >{{ post.date_posted.strftime('%Y-%m-%d') }}</small
+      >
+    </div>
+    <h2 class="article-title">{{ post.title }}</h2>
+    <p class="article-content">{{ post.content }}</p>
+  </div>
+</article>
+{%endif%}
+<script>
+  document
+    .getElementById("post-section-{{ post.id }}")
+    .addEventListener("click", function () {
+      window.location.href = "{{ url_for('post', post_id=post.id) }}";
+    });
+</script>
+{% endfor %} {% endblock content %}

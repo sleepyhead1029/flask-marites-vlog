@@ -1,0 +1,102 @@
+{% extends "admin/index.html" %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-success">
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endwith %}
+
+<div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Posts</strong>
+                            </div>
+                            <div class="table-stats order-table ov-h">
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th class="serial">#</th>
+                                            <th>Date Posted</th>
+                                            <th>Title</th>
+                                            <th>Content</th>
+                                            <th>Posted By</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for post in posts %}
+                                        <tr>
+                                            <td class="serial">{{post.id}}</td>
+                                            <td>{{ post.date_posted.strftime('%Y-%m-%d') }}</td>
+                                            <td>{{post.title}}</td>
+                                            <td>{{post.content}}</td>
+                                            <td>{{post.user_id}}</td>
+                                            <td>
+                                                {% if post.is_banned %}
+                                                <span class="badge badge-danger" style="width: 80px;">Banned</span>
+                                                {% elif not post.is_banned %}
+                                                <span class="badge badge-complete" style="width: 80px;">Allowed</span>
+                                                {% endif %}
+
+                                            </td>
+                                            <td>
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal-{{post.id}}">
+                                                Moderate
+                                                </button>
+                                            </td>  
+                                        </tr>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal-{{post.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    {%if post.is_banned%}
+                                                    <h5 class="modal-title" id="exampleModalLabel">Un Ban</h5>
+                                                    {%elif not post.is_banned%}
+                                                    <h5 class="modal-title" id="exampleModalLabel">Ban</h5>
+                                                    {%endif%}
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                {%if post.is_banned %}
+                                                <div class="modal-body">
+                                                    Are you sure you want to unban this post?
+                                                </div>
+                                                {%elif not post.is_banned %}
+                                                <div class="modal-body">
+                                                    Are you sure you want to ban this post?
+                                                </div>
+                                                {%endif%}
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <form action="{{url_for('banned_content', id=post.id)}}">
+                                                            <button type="submit" class="btn btn-danger">Save changes</button>
+                                                        </form>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                    {%endfor%}
+                                    </tbody>
+                                </table>
+                            </div> <!-- /.table-stats -->
+                        </div>
+                    </div>
+                    
+                </div>
+    
+    </div>
+
+    
+    {%endblock content%}
